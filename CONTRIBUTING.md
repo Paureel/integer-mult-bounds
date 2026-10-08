@@ -7,7 +7,7 @@ For a mathematical issue, identify the exact proposition, source label, or
 inequality; give a counterexample or the missing implication when possible;
 and distinguish numerical validation from an algorithmic proof obligation.
 For the current fork result, start with the
-[orthogonal-star audit](docs/research/orthogonal-star.md), then the inherited
+[two-stage audit](docs/research/two-stage.md), then the inherited
 [compact-control review guide](docs/research/compact-control-review.md).
 The [original audit](docs/audit.md) describes the retained upstream assumptions.
 

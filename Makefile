@@ -37,6 +37,8 @@ verify:
 	python3 scripts/make_compact_control_patch.py
 	python3 scripts/orthogonal_star.py
 	python3 scripts/make_orthogonal_star_patch.py
+	python3 scripts/two_stage.py
+	python3 scripts/make_two_stage_patch.py
 	python3 scripts/audit_scratch_pooling.py
 	python3 scripts/reuse_network.py
 	python3 scripts/make_reuse_patch.py
@@ -60,6 +62,7 @@ verify:
 	git apply --check --directory=upstream patches/h50-paired-tuned.patch
 	git apply --check --directory=upstream patches/compact-control-34.patch
 	git apply --check --directory=upstream patches/orthogonal-star-31.patch
+	git apply --check --directory=upstream patches/two-stage-28.patch
 
 note:
 	mkdir -p artifacts

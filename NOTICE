@@ -28,3 +28,11 @@ conversation archive was unavailable during this integration. The implementation
 published here is the checked reconstruction, not a copy of that archive.
 The compact-control method and inherited refinements remain attributed to
 Douglas Colkitt, and the original multiplication manuscript to OpenAI.
+
+The two-stage construction, charged rank-one copy corrections and direct
+partial-swap bit transfer are by Aurel Prosz (Paureel), developed with ChatGPT
+and independently reconstructed and audited with Codex on October 8, 2026.
+The conversational archive was unavailable. The bundled bit generator has a
+larger role count; the published conservative bit saving supports the same
+conditional final kappa. General proof dependencies and finite controls are
+identified in docs/research/two-stage.md.

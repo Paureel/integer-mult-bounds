@@ -13,12 +13,12 @@ type: software
 repository-code: "https://github.com/Paureel/integer-mult-bounds"
 url: "https://github.com/Paureel/integer-mult-bounds"
 abstract: >-
-  Conditional integer-multiplication refinement with an orthogonal-star complex
-  network developed by Aurel Prosz, building on Douglas Colkitt's compact-control
+  Conditional integer-multiplication refinement with two tensor stages and
+  an orthogonal-star complex network developed by Aurel Prosz, building on Douglas Colkitt's compact-control
   layer and OpenAI's pinned manuscript. The independently reconstructed finite
   implementation, exact certificates and combined source patch support
-  kappa = 591/10^12 > 2^-31 under the retained algorithmic interfaces and supplied
-  written proofs. The original conversation archive was unavailable during
+  kappa = 629/10^11 = 6.29e-9, approximately 2^-27.244293, greater than
+  2^-28 under the retained algorithmic interfaces and supplied written proofs. The original conversation archive was unavailable during
   integration. The complete original multiplication theorem is assumed;
   independent expert review and formal verification are not supplied.
 keywords:

@@ -1,3 +1,10 @@
+The latest fork artifacts are the [two-stage audit](research/two-stage.md),
+[certificate](../certificates/two-stage.json), and [combined patch](../patches/two-stage-28.patch).
+`make verify` includes the full reconstructed graphs, scalar/address endpoint
+controls, strict parameter conditions and source dependency tests. The cloud
+archive was unavailable; its test suite is not claimed as audited. The bit
+count discrepancy and conservative replacement saving are documented.
+
 # Reproducing the result
 
 The latest fork artifacts are the [orthogonal-star audit](research/orthogonal-star.md),

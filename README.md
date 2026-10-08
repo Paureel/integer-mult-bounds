@@ -1,82 +1,61 @@
 # A sharper exponent for integer multiplication
 
-**Paureel's orthogonal-star research draft, building on Douglas Colkitt's
+**Paureel's two-stage research draft, building on Douglas Colkitt's
 compact-control construction and OpenAI's original manuscript.**
 
-In the retained fixed finite-alphabet Turing-machine model with a fixed number
-of one-dimensional tapes, this fork supplies the conditional witness
+In the retained finite-alphabet Turing-machine model with a fixed number of
+one-dimensional tapes, this fork supplies the conditional witness
 
 $$
 T(n)=O\!\left(n(\log n)^{1-\kappa}\right),\qquad
-\boxed{\kappa=591/10^{12}=5.91\times10^{-10}>2^{-31}}.
+\boxed{\kappa=629/10^{11}=6.29\times10^{-9}\approx2^{-27.244293}>2^{-28}}.
 $$
 
-This is about **7.12048 times** the inherited `8.3e-11` compact-control result,
-at CrocSwap commit `6e564879f51ae16f23d392e9e196c605f36d90df`. Most of the much
-larger jump from older conversational witnesses comes from that inherited work.
-These compare exponent savings, not practical runtime speedups.
+This increases the preceding `5.91e-10 ≈ 2^-30.656123` exponent saving by
+about **10.642978 times**. These compare asymptotic exponent savings,
+not measured runtime speedups.
 
-**[Read the new construction, dependency audit and scope](docs/research/orthogonal-star.md)** ·
-[Inspect the exact certificate](certificates/orthogonal-star.json) ·
-[Review the combined source patch](patches/orthogonal-star-31.patch) ·
-[Read the finite-network proof source](notes/orthogonal-star-construction.tex)
+**[Read the construction, dependency audit and discrepancy](docs/research/two-stage.md)** ·
+[Inspect the exact certificate](certificates/two-stage.json) ·
+[Review the complete source patch](patches/two-stage-28.patch)
 
-The complete original multiplication theorem remains an assumption. This is
-an AI-assisted mathematical reconstruction with exact finite verification and
-written general proof dependencies; it has not received independent expert
-review or proof-assistant verification. The original research conversation's
-ZIP was unavailable during integration. The fork publishes the independently
-reconstructed implementation, whose counts and identities were checked here.
+The latest completed result in “Improve Integer Mult Bounds” replaces three
+stages with **two tensor stages plus a charged rank-one endpoint correction**.
+The recursive dimension falls from `h^3` to `h^2`. The correction acts on a
+copy, includes one child per data pair, and uses diagonal signs for the complex
+endpoint. The new direct partial-swap bit transfer is supplied as a written
+proof with exact modular controls. Arbitrary auxiliary values are restored.
 
-## What changed
+There is a reproducibility discrepancy: the bundled bit generator gives
+**123157 side roles**, versus the conversation's 119584. Its slightly weaker
+certified bit saving `1-tau=4.7e-7` still supports the same final kappa.
+The reconstructed complex graph matches the claimed counts: **2379258** side
+roles at `h=34`, including **11968** repaired alternating residuals.
+All **35808256** scalar coefficients and **37793456** scratch-frame incidences
+are checked exactly. The bit instance has `h=32`; its recursive dimension
+is 1024, independently of the complex instance's 1156.
 
-The new complex network partitions source triples on 25 points into **144
-fixed-pair groups**. Their indicator vectors are orthonormal over the
-two-element field, allowing intermediate sums to be shared while preserving
-valid phase-frame residuals. **50 alternating residuals** require explicit
-repairs; their costs are included.
+The complete original multiplication theorem remains an assumption. The
+conversation ZIP was unavailable; this fork publishes a fresh reconstruction.
+The general frame, reflection, copy, endpoint and tape proofs accompany exact
+finite checks. This AI-assisted audit is not independent expert review or
+proof-assistant verification. No complete multiplication-machine implementation
+or build of the newly revised manuscript is claimed.
 
-The graph has **160046 additions**, **323990 outputs**, and **484036 side roles**
-per invocation. Its reversible schedule restores arbitrary initial scratch.
-Forward source-span frames and reverse complement frames introduce no extra
-side decreases. All **5290000 scalar coefficients** and **7738184 scratch-frame
-incidences** are checked exactly. The resulting complex saving is `3.18e-9`;
-the paired bit saving stays `2.96e-9`.
+All **31 strict side conditions** and **seven assembly margins** pass. The
+limiting margin and strict absorption gap are
 
-Douglas Colkitt's compact-control method is retained. It moves compact fields
-at cost `O(V*((f log p)^tau+1))`, reserves complete temporary ranges from
-existing coordinates, and charges exceptional repair in every recursion node.
-The new finite network supplies the same phase interface with replacement
-constants; no earlier direct-swap or hypothetical resampling proposal is used.
+$$G=6.292768536\times10^{-9},\qquad G-\kappa=2.768536\times10^{-12}>0.$$
 
-Use exact parameters `epsilon=0.1999`, `c=1`, `beta=0.001`, `delta=1e-6`,
-`zeta=0.0001`, `C1=4.9961`, `lambda=1-2.959e-9` and `lambda'=1-2.958e-9`.
-All **31** compact-system conditions are strict. The limiting margin is
+The guard charges correction copies and wrappers and verifies `2<=s_c<m_c^5`.
+Douglas Colkitt's compact-control reservation, repair, Gaussian setup and
+assembly arguments are retained. The requested thousandfold target
+`5.91e-7 ≈ 2^-20.690339` is not achieved by this witness.
 
-$$G=5.913042\times10^{-10},\qquad G-\kappa=3.042\times10^{-13}>0.$$
-
-For these fixed declared bit/complex savings and the retained inequalities,
-the scoped supremum is `37/62500000148`, approximately `5.91999998598e-10`.
-This is not a ceiling for other constructions or integer multiplication.
-
-## Evidence and scope
-
-| Component | Evidence |
-| --- | --- |
-| New graph and full scalar matrix | Exact support and coefficient checks |
-| Forward/reverse scratch frames and repaired residuals | Complete finite incidence audit |
-| Arbitrary scratch restoration | General cancellation identity and exact rational symbolic maps |
-| Parameters, logarithm comparison, guard and margins | Generated rational certificate |
-| Compact movement, reservations, repair and recurrence | Inherited written general proofs and dependency review |
-| Source integration | Independent patch and internal-reference checks |
-| Complete original multiplication theorem | Assumed |
-| Original conversation ZIP | Unavailable; a fresh reconstruction is published |
-| Independent expert review / formalization | Not supplied |
-
-The [new audit](docs/research/orthogonal-star.md) records the construction and
-remaining assumptions. The inherited [compact-control review](docs/research/compact-control-review.md)
-records the general movement obligations. Its [PDF](artifacts/compact-control-note.pdf)
-describes the preceding `8.3e-11` result; no new PDF build is claimed here.
+The [preceding orthogonal-star audit](docs/research/orthogonal-star.md) and
+[inherited compact-control review](docs/research/compact-control-review.md)
+remain available. The inherited [PDF](artifacts/compact-control-note.pdf)
+describes `8.3e-11 ≈ 2^-33.488098`; it is not a PDF of the new result.
 
 ## Reproduce
 
@@ -119,29 +98,30 @@ and scoped ceilings.
 
 | Patch | Conditional saving | Scope |
 | --- | --- | --- |
-| [frozen-154](patches/frozen-154.patch) | `2^-154` | Original network and recurrence exponents |
-| [balanced-153](patches/balanced-153.patch) | `2^-153` | Balanced assembly parameters |
-| [same-network-129](patches/same-network-129.patch) | `2^-129` | Original network, sharper recurrence comparison |
-| [h46-111](patches/h46-111.patch) | `2^-111` | Smaller network, dyadic parameters |
-| [h46-109](patches/h46-109.patch) | `2^-109` | Rational recurrence saving, strict final margin |
-| [h46-108](patches/h46-108.patch) | `2^-108` | Variable stopping exponent |
-| [h46-rational](patches/h46-rational.patch) | `5.8e-33` | Strongest supplied parameter-only witness |
+| [frozen-154](patches/frozen-154.patch) | `4.379058e-47 ≈ 2^-154` | Original network and recurrence exponents |
+| [balanced-153](patches/balanced-153.patch) | `8.758115e-47 ≈ 2^-153` | Balanced assembly parameters |
+| [same-network-129](patches/same-network-129.patch) | `1.469368e-39 ≈ 2^-129` | Original network, sharper recurrence comparison |
+| [h46-111](patches/h46-111.patch) | `3.851860e-34 ≈ 2^-111` | Smaller network, dyadic parameters |
+| [h46-109](patches/h46-109.patch) | `1.540744e-33 ≈ 2^-109` | Rational recurrence saving, strict final margin |
+| [h46-108](patches/h46-108.patch) | `3.081488e-33 ≈ 2^-108` | Variable stopping exponent |
+| [h46-rational](patches/h46-rational.patch) | `5.8e-33 ≈ 2^-107.087574` | Strongest supplied parameter-only witness |
 | [nonadjacent-layout](patches/nonadjacent-layout.patch) | Original parameters retained | Routing proof and revised layout cost only |
-| [frozen-nonadjacent-107](patches/frozen-nonadjacent-107.patch) | `2^-107` | Direct routing, original network and recurrence exponents |
-| [h46-nonadjacent-78](patches/h46-nonadjacent-78.patch) | `2^-78` | Direct routing with the h = 46 network |
-| [h46-nonadjacent-76](patches/h46-nonadjacent-76.patch) | `2^-76` | Direct routing with tuned dimension and stopping parameters |
-| [h46-shared-side-75](patches/h46-shared-side-75.patch) | `2^-75` | Stage-1/stage-3 side-role sharing, routing, and parameter tuning |
-| [h46-incidence-67](patches/h46-incidence-67.patch) | `2^-67` | Rectangle incidence circuits, full auxiliary sharing, routing, and parameter tuning |
-| [h46-dag-63](patches/h46-dag-63.patch) | `2^-63` | Shared intermediate sums and reversible role allocation |
-| [h46-shared-point](patches/h46-shared-point.patch) | `13*2^-66` | Cross-group sharing |
-| [h50-paired-59](patches/h50-paired-59.patch) | `2^-59` | Paired sums, stopped guard and tighter Gaussian setup |
-| **[compact-control-34](patches/compact-control-34.patch)** | **`83/10^12 > 2^-34`** | **Compact controls, complete reservations, local repair and separate complex arity** |
-| [h50-paired-tuned](patches/h50-paired-tuned.patch) | `1.7523184e-18` | Earlier Paureel parameter refinement |
-| [orthogonal-star-31](patches/orthogonal-star-31.patch) | `591/10^12 > 2^-31` | Paureel complex-network replacement with retained compact controls |
+| [frozen-nonadjacent-107](patches/frozen-nonadjacent-107.patch) | `6.162976e-33 ≈ 2^-107` | Direct routing, original network and recurrence exponents |
+| [h46-nonadjacent-78](patches/h46-nonadjacent-78.patch) | `3.308722e-24 ≈ 2^-78` | Direct routing with the h = 46 network |
+| [h46-nonadjacent-76](patches/h46-nonadjacent-76.patch) | `1.323489e-23 ≈ 2^-76` | Direct routing with tuned dimension and stopping parameters |
+| [h46-shared-side-75](patches/h46-shared-side-75.patch) | `2.646978e-23 ≈ 2^-75` | Stage-1/stage-3 side-role sharing, routing, and parameter tuning |
+| [h46-incidence-67](patches/h46-incidence-67.patch) | `6.776264e-21 ≈ 2^-67` | Rectangle incidence circuits, full auxiliary sharing, routing, and parameter tuning |
+| [h46-dag-63](patches/h46-dag-63.patch) | `1.084202e-19 ≈ 2^-63` | Shared intermediate sums and reversible role allocation |
+| [h46-shared-point](patches/h46-shared-point.patch) | `1.761829e-19 ≈ 13*2^-66 ≈ 2^-62.299560` | Cross-group sharing |
+| [h50-paired-59](patches/h50-paired-59.patch) | `1.734723e-18 ≈ 2^-59` | Paired sums, stopped guard and tighter Gaussian setup |
+| **[compact-control-34](patches/compact-control-34.patch)** | **`8.3e-11 ≈ 2^-33.488098`** | **Compact controls, complete reservations, local repair and separate complex arity** |
+| [h50-paired-tuned](patches/h50-paired-tuned.patch) | `1.7523184e-18 ≈ 2^-58.985441` | Earlier Paureel parameter refinement |
+| [orthogonal-star-31](patches/orthogonal-star-31.patch) | `5.91e-10 ≈ 2^-30.656123` | Paureel complex-network replacement with retained compact controls |
+| **[two-stage-28](patches/two-stage-28.patch)** | **`6.29e-9 ≈ 2^-27.244293`** | **Two tensor stages, charged copy correction and direct-swap bit transfer** |
 
 ## Attribution, citation, and license
 
-The orthogonal-star construction and earlier paired parameter refinement in this fork are by Aurel Prosz (Paureel),
+The two-stage and orthogonal-star constructions and earlier paired parameter refinement in this fork are by Aurel Prosz (Paureel),
 developed with assistance from OpenAI ChatGPT and Codex. The inherited
 constructions and compact-control extension are attributed below.
 

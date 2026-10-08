@@ -1,5 +1,22 @@
 # Current fork result
 
+Updated October 8, 2026. The current conditional witness is
+`kappa=6.29e-9 ≈ 2^-27.244293 > 2^-28`.
+See the [two-stage audit](two-stage.md), [certificate](../../certificates/two-stage.json)
+and [standalone patch](../../patches/two-stage-28.patch).
+
+Two tensor stages plus one charged correction per data pair replace the
+three-stage architecture. The independently reconstructed bit graph has
+123157 roles rather than the conversational 119584; a weaker supported bit
+saving still yields the same kappa. Full finite complex checks and general
+written transfer/copy/endpoint arguments accompany the exact parameters.
+The original theorem and retained interfaces remain assumptions. Independent
+expert or formal verification and a new manuscript build are not claimed.
+
+The material below records preceding results and their historical scope.
+
+# Historical fork result at 43a5ec5
+
 Updated October 8, 2026. This fork now supplies Paureel's conditional
 `kappa=591/10^12=5.91e-10 > 2^-31` orthogonal-star result.
 

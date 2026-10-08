@@ -1,0 +1,192 @@
+{
+  "base_fork_commit": "43a5ec5d6718a017e139fcc8ea089c59e58f609d",
+  "bit_address": {
+    "exact_modular_address_cases": 13810,
+    "one_recursive_swap_block_exact": true,
+    "partial_swap_endpoints_exact": true,
+    "prime_powers": [
+      3,
+      5,
+      9,
+      25
+    ]
+  },
+  "bit_counts": {
+    "L": 10158080,
+    "N": 24601600,
+    "R": 123157,
+    "W": 1271238080,
+    "c0": 32,
+    "correction_calls": 24601600,
+    "deficit": 4285440,
+    "edge_calls": 1301718906880,
+    "eta": "27/8201536",
+    "h": 32,
+    "m": 1024,
+    "s": 1301743508480,
+    "v": 4960
+  },
+  "bit_graph": {
+    "additions": 108277,
+    "all_additions_disjoint": true,
+    "all_partial_outputs_exact": true,
+    "circuit_sha256": "3026c7ba4375a4e92d2ea39052729d5ecd679cc6237418d944c8d9cd4a334b84",
+    "every_node_has_common_point": true,
+    "explicit_checks_survive_optimization": true,
+    "h": 32,
+    "inputs": 4960,
+    "merged_additions": 10347,
+    "partial_outputs": 14880,
+    "roles": 123157
+  },
+  "bit_log": {
+    "deficit_slack": "109010801/3203725000000000",
+    "exp_partial_sum": "21204969276194883601684574842945326003235752088660934089823/20703733205795288085937500000000000000000000000000000000",
+    "log_upper": "1733/250",
+    "saving": "47/100000000",
+    "taylor_terms": 18
+  },
+  "bit_scalar": {
+    "all_scratch_restored": true,
+    "full_two_stage_map_exact": true,
+    "h": 6,
+    "independent_input_variables": 7600
+  },
+  "complex_counts": {
+    "L": 14241920,
+    "N": 35808256,
+    "R": 2379258,
+    "W": 28546995136,
+    "c0": 35,
+    "correction_calls": 35808256,
+    "deficit": 7324416,
+    "edge_calls": 33000283244544,
+    "eta": "9/40549709",
+    "h": 34,
+    "m": 1156,
+    "s": 33000319052800,
+    "v": 5984
+  },
+  "complex_endpoint": {
+    "basis_inputs": 1108,
+    "cross_term_cancels": true,
+    "diagonal_endpoint_exact": true,
+    "dimensions": [
+      1,
+      3,
+      5,
+      9
+    ]
+  },
+  "complex_graph": {
+    "additions": 768202,
+    "circuit_sha256": "3a4bc46cd48b6e1db88d46e0bd1e00ca6c9b77de9812387f722eef88557402fc",
+    "forward": 18896728,
+    "groups": 272,
+    "h": 34,
+    "matrix_coefficients": 35808256,
+    "nonzero_residuals": 15811952,
+    "outputs": 1611056,
+    "repairs": 11968,
+    "reverse": 18896728,
+    "roles": 2379258,
+    "triples": 5984
+  },
+  "complex_log": {
+    "deficit_slack": "158860742121/405497090000000000000000",
+    "exp_partial_sum": "272784348876823290153912999610017412809064609986610639285515381589814832343963718009909379198335222153545655149911579313721/235971706880000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "log_upper": "705273/100000",
+    "saving": "3147/100000000000",
+    "taylor_terms": 22
+  },
+  "complex_scalar": {
+    "all_scratch_restored": true,
+    "full_two_stage_map_exact": true,
+    "h": 7,
+    "independent_input_variables": 31010
+  },
+  "fixed_saving_supremum": "3147/500000012588",
+  "guard": {
+    "B": 1488885258270348900937913468861248,
+    "C0": 461313566046224628990335055455445578717062757488285264036781168096485343232,
+    "C1": "49997/10000",
+    "E": 1488885258270348900904913149808448,
+    "correction_copy_and_wrappers_included": true,
+    "s_below_m_fifth": true,
+    "scalar_updates_upper": 245635731968,
+    "total_node_updates_upper": 1057170495167136
+  },
+  "parameters": {
+    "absorption_gap": "346067/125000000000000000",
+    "constraint_slacks": {
+      "K_dominates_log_p": "199999/1000000",
+      "K_smaller_than_ell": "300001/500000",
+      "alpha_below_sqrt_p": "800001/4000000",
+      "beta_below_one": "9999/10000",
+      "beta_positive": "1/10000",
+      "c_positive": "1",
+      "crt_layout": "37600047/100000000000000",
+      "delta_below_one_eighth": "12499999/100000000",
+      "delta_positive": "1/100000000",
+      "dimension_upper_bound": "400003/3000000",
+      "epsilon_positive": "199999/1000000",
+      "gamma_sublinear": "400003/2000000",
+      "gaussian_cost": "31/25000000",
+      "guard_width": "649997/10000000000",
+      "kappa_positive": "629/100000000000",
+      "lambda_above_sigma": "1/200000000000",
+      "lambda_above_tau": "87707/200000000000",
+      "lambda_below_one": "6293/200000000000",
+      "lambda_prime_above_lambda": "1/1000000000000",
+      "lambda_prime_below_one": "3933/125000000000",
+      "leaf_cost": "2853/1000000000000000",
+      "packed_overhead": "48853/1000000000000000",
+      "prefix_cost": "300001/500000",
+      "prime_interval_growth": "300001/500000",
+      "r_superpolynomial": "800001/1000000",
+      "reserved_axes": "124999996067/125000000000",
+      "scalar_cost": "80000099/100000000",
+      "sigma_below_one": "3147/100000000000",
+      "sigma_positive": "99999996853/100000000000",
+      "tau_below_one": "47/100000000",
+      "tau_positive": "99999953/100000000"
+    },
+    "internal_exponent": "999999968486147/1000000000000000",
+    "margins": {
+      "g1": "300001/500000",
+      "g2": "9399953/100000000000000",
+      "g3": "786596067/125000000000000000",
+      "g4": "37600047/100000000000000",
+      "g5": "31/25000000",
+      "g6": "80000099/100000000",
+      "g7": "199999/1000000"
+    },
+    "minimum_margin": "786596067/125000000000000000",
+    "parameters": {
+      "C1": "49997/10000",
+      "beta": "1/10000",
+      "c": "1",
+      "delta": "1/100000000",
+      "epsilon": "199999/1000000",
+      "kappa": "629/100000000000",
+      "lam": "199999993707/200000000000",
+      "lamp": "124999996067/125000000000",
+      "sigma": "99999996853/100000000000",
+      "tau": "99999953/100000000"
+    },
+    "zeta": "1/10000"
+  },
+  "proof_sha256": {
+    "notes/compact-control-guard.tex": "38eac1e967ca30dd7df111943e41e8fbb93cafbe0356e8ebc8cb2db78089067f",
+    "notes/compact-control-layout.tex": "2bc28e50f3eb092195294cafa81213e520f6d42e7935e9905ad8a6199e2a7c87",
+    "notes/compact-control-movement.tex": "b963c3d2f4e1b7059aa289bb4b4ac89b688920bcf42f5b20d7698cdef0132cc6",
+    "notes/direct-swap-transfer.tex": "2ce8374fbcfe95f91f38a30e790f0d8ebc96685162257b2ae96980adf0d58043",
+    "notes/two-stage-construction.tex": "7b6691245a61249830981c9d39e81cb65a57ebc225144732afab809d9f0ebe17",
+    "notes/two-stage-phase-transfer.tex": "f876dfae4a0bf7ad09fba7d5c13ae19ad110eda20ae176a8bbac6b15c6223eff",
+    "scripts/two_stage.py": "8df51e19748761ced8fd384ec167b7cb541e6956b1508ad3bc50678089677719"
+  },
+  "provenance": "Aurel Prosz (Paureel), developed with ChatGPT and reconstructed with Codex. Cloud ZIP unavailable. The bundled bit generator has more roles; its weaker certified saving suffices for the same kappa.",
+  "scope": "Exact finite graph, scalar, address and arithmetic audits plus written general frame, reflection, copy, endpoint and tape proofs. Retained upstream theorem and compact-control arguments remain assumptions; no independent expert or proof-assistant review or full multiplication implementation.",
+  "status": "CONDITIONAL TWO-STAGE RESULT; INDEPENDENT RECONSTRUCTION; NOT FORMAL VERIFICATION",
+  "upstream_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+}

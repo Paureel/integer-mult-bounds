@@ -1,0 +1,49 @@
+\subsection{The two-stage complex endpoint correction}
+\label{sec:two-stage-phase-transfer}
+Use the original phase operators $C_U=H^{\otimes m}\operatorname{diag}
+(i^{\mathrm{wt}(p_U x)})H^{\otimes m}$. Orthogonal weight additivity
+modulo four gives $C_{U\perp V}=C_UC_V$. For a two-triple indicator
+$w$, $\mathrm{wt}(w)=9$, so on each block
+$P=C_{\langle w\rangle}=C_w=aI+bX_w$, where
+$a=(1+i)/2$, $b=(1-i)/2$, and $P^2=X_w$, $P^4=I$.
+Let $F=C_{\mathcal F}$ and $E=C_{U_a^\perp}=FP^{-1}$.
+The common-frame identity for the two scalar stages gives
+\[
+ A=-Fy,\qquad B=EP^{-1}x+Ey=FP^{-2}x+Ey.
+\]
+Copy $A$, apply $P^{-1}$ to the copy, and add it into $B$. Since
+$P^{-1}F=E$, the $y$ term cancels. The retained binary basis-change
+construction implements $P^{-1}$ with one inverse recursive phase child,
+with the same selected axes, spectators and compact reservations. Its
+inverse wrapper is the retained diagonal-sign and fourth-root identity.
+Copy, scalar addition and cleanup are charged at this node; the unmodified
+stream $A$ is parked during the child, as in the direct-swap copy proof.
+
+It remains to remove $P^{-2}$ without assuming a free translation. Write
+$Z_w$ for the diagonal sign $(-1)^{w\cdot x}$. On one coordinate,
+$ZCZ=iC^{-1}$, and $C^{-1}=CX$. Therefore, with $k=\mathrm{wt}(w)$,
+\[
+ Z_wFZ_w=i^kFX_w,\qquad
+ Z_wX_w=(-1)^kX_wZ_w,\qquad
+ i^k Z_wFP^{-2}Z_w=F.
+\]
+For $f$ selected blocks the same identity has scalar $i^{9f}$ and the
+product of the block signs. Apply that diagonal sign to the physical $x$
+input before the network, and to its corrected $B$ output afterward,
+together with $i^{9f}$. Negate $A$ and undo the bank exchange in the row
+merge. Both data roles now receive exactly $F$. Every auxiliary receives
+$F$ already, since it is restored logically and has zero/full terminal
+labels. These diagonal multipliers are computed sequentially from the
+selected address bits; their descriptor work is charged in the retained
+record regime. They do not permute addresses.
+
+All ordinary edges are implemented by the original signed rank-one phase
+kernel construction for their orthonormal residual bases. The extra $N$
+copies use exactly $N$ additional phase children, already included in $s$.
+The original phase recursion's proof now uses this completed array identity
+in place of its three-stage weight-27 endpoint identity. Its basis-change,
+row split, dirty-control reservation and depth-first fixed-tape scheduling
+arguments are otherwise the retained ones. The explicit coefficient-node
+allowance also includes copies, adds, input/output signs, fourth roots and
+inverse wrappers, so the generalized stopped-depth guard uses the complete
+charged $s$, not the optimistic edge-only count.
