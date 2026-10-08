@@ -1,5 +1,12 @@
 # Packed movement audit: constants improve, the exponent obstruction remains
 
+**Follow-up:** the [preparation pass](research/layer-preparation.md) extends
+the recurrence sum below to both orderings of tau and sigma. The historical
+calculations here retain their original parameters and scope.
+The subsequent [short-guard reduction](research/short-guard-audit.md) shows
+that logarithmic working guards suffice after gathering. The gathering and
+inverse costs are still missing; it does not certify a new kappa.
+
 October 7, 2026. This is a scoped follow-up to the conditional 2^-76 witness.
 It audits the existing packed routine and its recurrence, not all possible
 implementations of the same mathematical operator. No stronger headline kappa

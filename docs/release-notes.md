@@ -1,46 +1,68 @@
-# Draft routing-improvement release
+# Draft compact-control release
 
 Repository: [CrocSwap/integer-mult-bounds](https://github.com/CrocSwap/integer-mult-bounds)
 
-Suggested description:
+Suggested repository description:
 
-> Conditional exponent improvements for integer multiplication, with exact rational certificates, source patches, and proof dependency audits.
+> Conditional integer-multiplication bound with κ > 2⁻³⁴: compact-control movement, written proofs, exact certificates, and reproducible source patches.
 
-Suggested release title: **Direct axis routing: conditional exponent saving 2^-78**
+Suggested release title: **Compact controls: conditional exponent saving κ > 2⁻³⁴**
 
 ## Release body
 
-This research draft improves the axis-routing schedule in OpenAI's
-*Integer multiplication below n log n*. Its strongest supplied witness is
-`kappa = 2^-78` in `O(n (log n)^(1-kappa))`, for the manuscript's
-fixed-alphabet, fixed-tape Turing-machine model.
+This research draft gives the conditional bound
 
-Direct nonadjacent swaps reduce the number of layout interchanges from O(d²)
-to O(d). The revised cost permits a fixed dimension exponent, removing the
-cubic constraint behind our earlier parameter-only ceiling. The finite
-network and numerical operations are retained from our h = 46 construction.
+    T(n) = O(n (log n)^(1-kappa)),
+    kappa = 83/10^12 = 8.3e-11 > 2^-34,
 
-New artifacts:
+in the fixed finite-alphabet, fixed-tape Turing-machine model of OpenAI's
+*Integer multiplication below n log n* (result family #109).
 
-- A routing research note and dependency audit.
-- An exact rational certificate for the 2^-78 witness, plus a 2^-107 witness
-  using the original network and recurrence exponents.
-- Three independent source patches, including a routing-only alternative.
-- Finite checks of coordinate permutations, padding, coefficient records,
-  CRT order, and parameter constraints.
+The new witness increases the exponent saving by approximately **47.85 million
+fold** over our preceding published `2^-59` result. The convenient dyadic
+corollary `2^-34` is exactly `2^25` times `2^-59`. These are exponent
+comparisons, not measured or predicted practical speedups.
 
-The earlier parameter-only note, certificates, and seven patches remain
-available. Its ceiling applies to the original cost accounting. No ceiling
-or optimality claim is established for the revised accounting.
+The structural change is to move **compact dirty-control fields instead of
+entire spaced windows**. This removes the `K^tau` spacing penalty from the
+simultaneous layer and the restriction behind the previous quadratic
+conversion of finite-network savings into the multiplication exponent.
 
-The full upstream multiplication theorem remains an assumption. The exponent
-comparison does not imply a practical speedup. Independent review is welcome.
+The proof supplies wider-control streaming with all offset work charged,
+front/back temporaries carved from existing address space, complete ranges
+through padding and recursion, exact temporary restoration, and deterministic
+exceptional repair charged locally at every node. The bit network remains at
+`h=50`; the original complex network is independently instantiated at `h=25`.
+A generalized stopping-depth guard and exact assembly checks complete the
+witness.
 
-Author: Douglas Colkitt, with assistance from OpenAI Codex. Apache-2.0 licensed.
+Artifacts:
+
+- [Proof note (PDF)](../artifacts/compact-control-note.pdf) and [TeX source](../notes/compact-control-note.tex).
+- [Exact layer certificate](../certificates/compact-control-layer.json) and [address checks](../certificates/compact-control-audit.json).
+- [Combined patch](../patches/compact-control-34.patch), applied directly to the unchanged pinned upstream source.
+- [Review guide](research/compact-control-review.md), [current status](research/current-status.md), and [reproduction instructions](reproducibility.md).
+- Preserved historical proofs, certificates, patches and bounded research audits.
+
+The complete upstream theorem remains an assumption. The new general claims
+rest on written proofs, supported by finite tests and exact arithmetic; they
+have not received independent mathematical review or formal verification.
+The repository does not contain a full multiplication-machine implementation.
+
+The remaining scoped ceiling, below `8.369598075e-11`, concerns the fixed
+`h=25` complex motif and retained Gaussian/leaf inequalities. It is not a
+limit on other networks or on integer multiplication generally.
+
+Author: **Douglas Colkitt**, with assistance from OpenAI Codex. The initial
+compact-control proposal came from a separate research agent. Apache-2.0
+licensed. No independent endorsement, priority or unrestricted optimality
+claim is made. Independent mathematical review is welcome.
 
 ## Publication details
 
-Attach `artifacts/nonadjacent-axis-note.pdf` if publishing a release. Add a
-release version and date to citation metadata when a release is actually
-published. This draft does not create a GitHub release or post an announcement.
-Suggested thread: [announcement.md](announcement.md).
+This file is prepared release copy, not a record of a GitHub release.
+Attach `artifacts/compact-control-note.pdf` when publishing. For a GitHub
+release body, replace the relative artifact links above with links under
+`https://github.com/CrocSwap/integer-mult-bounds/blob/<release-commit>/`.
+Set release version/date metadata only when a release is actually published.
+The accompanying [announcement](announcement.md) is draft copy for that time.

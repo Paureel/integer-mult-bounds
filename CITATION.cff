@@ -14,13 +14,12 @@ repository-code: "https://github.com/Paureel/integer-mult-bounds"
 url: "https://github.com/Paureel/integer-mult-bounds"
 abstract: >-
   Exact rational certificates, source patches, and research notes for conditional
-  improvements to OpenAI's integer-multiplication manuscript. Direct nonadjacent
-  axis routing, shared finite circuits, auxiliary role sharing, an early-stopping
-  guard bound, and tighter Gaussian setup support kappa = 2^-59. Paureel's
-  fixed-exponent parameter refinement gives kappa = 1.7523184e-18, with an exact
-  scoped supremum and integrated rational certificate. An earlier
-  parameter-only witness gives kappa = 5.8e-33, near a certified ceiling under
-  the original cost accounting. The complete upstream algorithmic theorem is assumed.
+  improvements to OpenAI's integer-multiplication manuscript. Compact dirty-control
+  fields remove the simultaneous layer's spacing penalty. Together with complete
+  temporary reservations, local exceptional repair, a separately sized complex
+  network, and retained refinements, the supplied written proofs support
+  kappa = 83/10^12 > 2^-34. The complete upstream algorithmic theorem is assumed;
+  the new arguments are not independently reviewed or formally verified.
 keywords:
   - integer multiplication
   - computational complexity

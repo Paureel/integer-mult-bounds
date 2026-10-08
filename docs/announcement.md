@@ -1,38 +1,40 @@
 # Draft Twitter announcement
 
-Suggested four-post thread. This is draft copy, not a record of publication.
+Prepared for publication after the repository is updated. Nothing has been
+posted by preparing this file. Each numbered paragraph is a separate post.
 
 **1/4**
 
-We've pushed our conditional improvement to OpenAI's integer multiplication result (#109) further:
+New conditional integer-multiplication result: κ > 2⁻³⁴ in O(n (log n)^(1−κ)), building on OpenAI #109.
 
-T(n) = O(n (log n)^(1 − κ)), with κ = 2^-78.
-
-That's about 570 million times our previous exponent saving of 5.8e-33—not a practical speedup claim.
+Our exact witness, κ = 8.3 × 10⁻¹¹, is ~48 million times our previous 2⁻⁵⁹ exponent saving. This compares exponents, not practical runtimes.
 
 **2/4**
 
-The key: the manuscript already supports nonadjacent axis swaps. Using them directly reduces layout routing from O(d²) to O(d) swaps, while preserving the network and arithmetic. A small scheduling change unlocks much stronger parameters.
+The key: move compact control bits instead of entire spaced windows. We construct the temporary fields from existing address space and restore them exactly. Removing the spacing penalty breaks the quadratic bottleneck in our previous analysis.
 
 **3/4**
 
-Our earlier ceiling applied to the original routing estimates. Improving those estimates removes the constraint that made the exponent saving cubic in the network saving. The new witness scales quadratically; we haven't established a new ceiling.
+This is a structural proof extension. The note covers tape costs, recursive layout, exceptional repair and precision. The upstream theorem remains assumed; our new arguments await independent review. Exact arithmetic and finite tests support the written proof.
 
 **4/4**
 
-The bound remains conditional on the upstream algorithmic interfaces. Notes, exact certificates, source patches, and the routing audit are public. Developed with OpenAI Codex; independent review welcome.
-
+Proof note, certificates, source patch and a focused review guide:
 https://github.com/CrocSwap/integer-mult-bounds
+
+The complex finite network now limits this construction. Improving it is the next research target. Developed with OpenAI Codex; independent review welcome.
 
 ## Claim boundaries
 
-- The headline is a conditional asymptotic bound, not an independently proved
-  upstream theorem or a measured runtime improvement.
-- The finite network and numerical operations are retained from our h = 46
-  construction; the sequence of data-movement operations changes.
-- The earlier ceiling remains valid under its stated cost assumptions. It is
-  not a lower bound for integer multiplication or the revised routing schedule.
-- No priority or optimality claim is made for the new witness.
+- The strongest witness is `83/10^12`, strictly between `2^-34` and `2^-33`.
+- The approximately 48-million-fold comparison uses that exact witness.
+  Comparing only `2^-34` to `2^-59` gives exactly `2^25`, about 33.55 million.
+- The result is conditional on retained upstream interfaces and the new written
+  arguments. Tests and PDF builds are not independent mathematical review.
+- The scoped ceiling applies only to the fixed `h=25` complex motif and retained
+  Gaussian/leaf inequalities. It is not a general limit on integer multiplication.
+- No practical benchmark, best-known claim, priority claim or unrestricted
+  optimality claim is made.
 
-Author: Douglas Colkitt. See the [routing note](../artifacts/nonadjacent-axis-note.pdf)
-and [audit](nonadjacent-axis-audit.md) for the precise statements.
+Author: Douglas Colkitt. See the [proof note](../artifacts/compact-control-note.pdf)
+and [review guide](research/compact-control-review.md) for the precise scope.

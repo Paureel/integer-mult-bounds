@@ -1,5 +1,35 @@
 # Next research steps after the bounded investigation
 
+**Authoritative current status:** [compact-control follow-up](current-status.md).
+It supplies a local conditional `83/10^12 > 2^-34` witness. The next substantial
+target is the complex finite network; the split-central-gate experiment is a
+fallback research direction. Everything below records earlier roadmaps and
+must be read in its stated historical scope.
+
+**Pre-compact-control roadmap:** the [preparation pass](layer-preparation.md) starts from
+the published conditional 2^-59 witness and targets a sparse or fused layer
+primitive. It generalizes stopping, handles unequal exponents, and audits a
+stronger complex interface. The [short-guard reduction](short-guard-audit.md)
+now isolates the next target: a costed gathering algorithm, or a direct
+strided-window operation. Logarithmic guards suffice once gathered; the fast
+movement bound is still missing. The [gather-schedule audit](gather-schedule-audit.md)
+closes serial interval schedules and ordinary round reuse as ways to remove
+the quadratic loss with the existing estimates. The subsequent
+[bounded coded-carry attempt](coded-carry-audit.md) found no sublinear
+recurrence. Its decision is to return the main effort to finite networks and
+reopen the coded route only for a concrete costed construction outside the
+audited class. The first [cancellation audit](cancellation-audit.md) finds two
+smaller scalar circuits but rejects them through disjoint nonorthogonal-path
+rank bounds under retained data frames. Future cancellation topologies should
+pass that screen before frame optimization; removing self terms alone fails.
+The [joint rational-frame audit](joint-frame-audit.md) then proves optimality
+of internal active-factor frames under fixed invocation boundaries and the
+four grouped central gates, including joint copy/injection/side changes.
+The next frame experiment must cross invocation boundaries or change central
+gate grouping; another internal-only matrix search cannot improve this model.
+All text below is the preserved historical roadmap
+from the 2^-63 stage; its status statements and target budgets are not current.
+
 The checked result is now **conditional kappa=2^-63**, obtained by
 [shared intermediate sums](shared-computation.md) with reversible role
 allocation and auxiliary-role sharing. No exponent in the 50s has been established. The historical targets

@@ -1,11 +1,10 @@
 # Reproducing the result
 
-The primary artifacts are the [parameter refinement audit](paired-tuned-parameters.md),
-[strongest patch](../patches/h50-paired-tuned.patch),
-[integrated certificate](../certificates/paired-tuned-parameters.json), and
-the inherited [paired-network note](../artifacts/paired-note.pdf).
-They are conditional on the algorithmic interfaces identified in the
-[dependency audit](audit.md).
+The primary artifacts are the [compact-control note](../artifacts/compact-control-note.pdf),
+[combined patch](../patches/compact-control-34.patch), and
+[exact layer certificate](../certificates/compact-control-layer.json).
+They are conditional on the retained algorithmic interfaces and written
+extensions identified in the [review guide](research/compact-control-review.md).
 
 ## Requirements
 
@@ -52,11 +51,39 @@ This command performs these steps:
    h=50 paired-network certificate and independent patch for kappa=2^-59. They
    also check the stopped guard constants and revised Gaussian inequalities;
    these proof models are selected explicitly in the parameter checker.
-   `scripts/tune_paired_parameters.py --upstream` independently evaluates the
-   refined rational parameters, encloses their fixed-exponent supremum, rechecks
-   the real paired construction, and compares all slacks and margins with the
-   existing verifier. `scripts/make_tuned_paired_patch.py` generates an independent
-   tuned patch against the pinned source, preserving its required proof extensions.
+   `scripts/prepare_layers.py` records generalized guard and unequal-exponent
+   recurrence estimates, the independent complex-family search, and clearly
+   marked hypothetical sparse-primitive targets in `layer-preparation.json`.
+   This preparation pass does not change the published 2^-59 witness.
+   `scripts/audit_sparse_fusion.py` records finite phase identities, a bounded
+   central-frame screen, and the cost targets for future sparse primitives.
+   Its output is a research audit, not a stronger multiplication certificate.
+   `scripts/audit_fused_block.py` checks a complete parity-butterfly sandwich
+   and records the cut-rank obstruction for coordinate-child/pointwise-only
+   recursion. Its exact identity does not supply a faster multiplication bound.
+   `scripts/audit_short_guards.py` records logarithmic working guards and a
+   reduction to a still-unproved fast gathering routine. Exact address tests
+   check the reduction's maps, not a new tape-time or multiplication bound.
+   `scripts/audit_gather_schedules.py` checks a reversible merge tree, scoped
+   interval-schedule obstructions, and optimistic round-reuse accounting.
+   It does not rule out coded gatherers or certify a new multiplication bound.
+   `scripts/audit_coded_carries.py` checks an exact but linear carry code and
+   small controls for a scoped flat affine-circuit obstruction. The bounded
+   attempt supplies no sublinear recurrence or new kappa.
+   `scripts/audit_cancellation.py` checks the first cancellation circuit's
+   scalar map and dirty-scratch restoration, then records nonorthogonal-path
+   bounds rejecting two topologies under the retained data-stage frames.
+   `scripts/audit_joint_frames.py` reproduces a complete small bit invocation's
+   edge ranks and checks rational controls for the fixed-boundary local
+   optimality proof. It does not certify a stronger multiplication bound.
+   `scripts/audit_compact_controls.py` checks the compact dirty-control address
+   maps, inverses and exceptional repair. `scripts/compact_control_layer.py`
+   records the new conditional `83/10^12 > 2^-34` witness, with reservations,
+   the revised recurrence, independently sized complex motif, generalized
+   guards and all assembly margins. Its general tape claims depend on the
+   written [compact-control proof](../notes/compact-control-note.tex).
+   `scripts/make_compact_control_patch.py` generates the independent combined
+   patch, including the changed global exceptional-stream accounting.
    `scripts/research_networks.py` and `scripts/search_network_variants.py`
    record scoped family bounds and clearly marked exploratory scores.
 4. The standard-library unittest suite checks certificate boundaries, selected
@@ -69,6 +96,12 @@ that the checked-in outputs reproduce exactly, run on a clean checkout:
 ```sh
 git diff --exit-code -- certificates patches
 ```
+
+The compact-control note builds with `make compact-note`. Its statement remains
+conditional on the identified upstream interfaces and supplied written
+extensions. See the
+[current research status](research/current-status.md) before treating older
+research pages or preparation certificates as current conclusions.
 
 The theorem certificates and all-h bound comparisons use `fractions.Fraction`;
 no floating-point result controls their acceptance. The separate exploratory
@@ -86,7 +119,7 @@ existing one. It leaves the bundled source untouched:
 mkdir -p build
 mkdir build/review
 cp -R upstream/build build/review/build
-git apply --directory=build/review patches/h50-paired-tuned.patch
+git apply --directory=build/review patches/compact-control-34.patch
 ```
 
 Read `build/review/build/main.tex` and its included sections. The other patches
@@ -97,18 +130,23 @@ are alternatives based on the same original manuscript, not successive commits.
 With Tectonic installed:
 
 ```sh
-make note
+make compact-note
 ```
 
-The result is `artifacts/parameter-note.pdf`. Build the separate routing audit
+The result is `artifacts/compact-control-note.pdf`. Build the earlier
+parameter-only note with `make note`, producing `artifacts/parameter-note.pdf`.
+Build the separate routing audit
 with `make audit-note`, producing `artifacts/nonadjacent-axis-note.pdf`.
 Build the tuning note with `make tuned-note`, producing
 `artifacts/routing-tuned-note.pdf`. Build the preserved stage-sharing note with
 `make reuse-note`, producing `artifacts/stage-reuse-note.pdf`.
 Build the rectangle-circuit note with `make incidence-note`, producing
 `artifacts/incidence-note.pdf`.
-Build the latest shared-computation note with `make dag-note`, producing
+Build the shared-computation note with `make dag-note`, producing
 `artifacts/dag-note.pdf`.
+Build the cross-group and paired notes with `make shared-point-note` and
+`make paired-note`, producing `artifacts/shared-point-note.pdf` and
+`artifacts/paired-note.pdf`, respectively.
 The first run may download fonts
 and TeX packages; the numerical verification does not use them. PDF builds may
 differ in metadata or typesetting across TeX environments. The exact-byte
@@ -136,5 +174,8 @@ and [setup-python](https://github.com/actions/setup-python) actions, with
 read-only repository permissions. The PDF is supplied for readers and can be
 rebuilt locally using the command above.
 
-Build the latest note with `make paired-note`. The earlier notes and
+Build the latest note with `make compact-note`. The earlier notes and
 patches remain available as independent witnesses.
+
+The earlier fork refinement is preserved in `scripts/tune_paired_parameters.py`
+and `scripts/make_tuned_paired_patch.py`; both remain part of `make verify`.
