@@ -1,5 +1,11 @@
 # Reproducing the result
 
+The latest fork artifacts are the [orthogonal-star audit](research/orthogonal-star.md),
+[certificate](../certificates/orthogonal-star.json), and
+[combined patch](../patches/orthogonal-star-31.patch). `make verify` now includes
+its exact graph, matrix, scratch-frame and symbolic checks. The following
+compact-control note and PDF document the inherited preceding result.
+
 The primary artifacts are the [compact-control note](../artifacts/compact-control-note.pdf),
 [combined patch](../patches/compact-control-34.patch), and
 [exact layer certificate](../certificates/compact-control-layer.json).
@@ -119,7 +125,7 @@ existing one. It leaves the bundled source untouched:
 mkdir -p build
 mkdir build/review
 cp -R upstream/build build/review/build
-git apply --directory=build/review patches/compact-control-34.patch
+git apply --directory=build/review patches/orthogonal-star-31.patch
 ```
 
 Read `build/review/build/main.tex` and its included sections. The other patches

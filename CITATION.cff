@@ -13,13 +13,14 @@ type: software
 repository-code: "https://github.com/Paureel/integer-mult-bounds"
 url: "https://github.com/Paureel/integer-mult-bounds"
 abstract: >-
-  Exact rational certificates, source patches, and research notes for conditional
-  improvements to OpenAI's integer-multiplication manuscript. Compact dirty-control
-  fields remove the simultaneous layer's spacing penalty. Together with complete
-  temporary reservations, local exceptional repair, a separately sized complex
-  network, and retained refinements, the supplied written proofs support
-  kappa = 83/10^12 > 2^-34. The complete upstream algorithmic theorem is assumed;
-  the new arguments are not independently reviewed or formally verified.
+  Conditional integer-multiplication refinement with an orthogonal-star complex
+  network developed by Aurel Prosz, building on Douglas Colkitt's compact-control
+  layer and OpenAI's pinned manuscript. The independently reconstructed finite
+  implementation, exact certificates and combined source patch support
+  kappa = 591/10^12 > 2^-31 under the retained algorithmic interfaces and supplied
+  written proofs. The original conversation archive was unavailable during
+  integration. The complete original multiplication theorem is assumed;
+  independent expert review and formal verification are not supplied.
 keywords:
   - integer multiplication
   - computational complexity

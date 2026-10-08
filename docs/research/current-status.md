@@ -1,4 +1,24 @@
-# Current contracts and research status
+# Current fork result
+
+Updated October 8, 2026. This fork now supplies Paureel's conditional
+`kappa=591/10^12=5.91e-10 > 2^-31` orthogonal-star result.
+
+See [the new construction and dependency audit](orthogonal-star.md),
+[certificate](../../certificates/orthogonal-star.json), and
+[independent source patch](../../patches/orthogonal-star-31.patch).
+The fixed-pair grouping replaces the complex side network, retaining the
+paired bit primitive and compact-control movement/layout/repair arguments.
+The independently reconstructed implementation matches the described finite
+counts. The original research ZIP was unavailable; its actual files and
+48-test suite are not claimed as audited. The complete original theorem
+remains assumed, and independent expert/formal verification is not supplied.
+
+The new result is about 7.12048 times the inherited upstream headline below.
+The older scoped ceiling below applies to the original unshared complex
+network and does not bound the orthogonal-star replacement.
+
+## Historical upstream status at commit 6e564879f51ae16f23d392e9e196c605f36d90df
+
 
 Updated October 7, 2026. Author: Douglas Colkitt. All results remain conditional
 on the pinned upstream algorithmic interfaces and the identified written

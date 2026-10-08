@@ -19,3 +19,12 @@ The fixed-exponent paired parameter refinement and supremum analysis in this
 fork are by Aurel Prosz (Paureel), Copyright 2026 Aurel Prosz. They were developed
 with assistance from OpenAI ChatGPT and integrated with assistance from OpenAI
 Codex. The inherited construction and manuscript attribution above is retained.
+
+The orthogonal-star complex-network construction is by Aurel Prosz (Paureel),
+developed in the Improve Integer Mult Bounds research conversation with
+assistance from OpenAI ChatGPT, and independently reconstructed, audited and
+integrated with assistance from OpenAI Codex on October 8, 2026. The original
+conversation archive was unavailable during this integration. The implementation
+published here is the checked reconstruction, not a copy of that archive.
+The compact-control method and inherited refinements remain attributed to
+Douglas Colkitt, and the original multiplication manuscript to OpenAI.

@@ -1,0 +1,161 @@
+% Aurel Prosz (Paureel), October 8, 2026; developed with ChatGPT and Codex.
+% Conditional replacement of the complex finite network, independently reconstructed.
+\subsection{An orthogonal-star replacement for the complex network}
+\label{sec:orthogonal-star}
+Retain the paired bit primitive and the compact-control movement, layout,
+repair and precision arguments. Only the complex side circuit is replaced.
+The construction below was developed in Aurel Prosz's research conversation
+with ChatGPT and independently reconstructed and audited with Codex. The
+original conversation archive was unavailable during this integration;
+the supplied implementation is the checked reconstruction described here.
+
+Put $h=25$, $F=\mathbb F_2^{25}$ with its ordinary dot product,
+$v=\binom{25}{3}=2300$, $m=h^3=15625$, and $N=v^3$.
+Partition the ground points into consecutive parts of sizes 12 and 13.
+Assign each triple to its same-part pair when it meets both parts, and to
+its two smallest points when it lies in one part. These are 144 disjoint
+groups of source triples. In a group with pair $\{i,j\}$, its indicators are
+$u_k=e_i+e_j+e_k$. Over $\mathbb F_2$,
+\[
+ u_k\cdot u_\ell=\delta_{k\ell}.
+\]
+Every subset is therefore an orthonormal family. Its span is nondegenerate;
+between nested subsets the residual is spanned by the added indicators.
+
+For target triple $S$, request from each group the sum of its triples
+disjoint from $S$ with coefficient $1/2$, and the sum of its triples meeting
+$S$ in two points with coefficient $-1/2$. Omit empty sums. The retained
+center computation contributes $(|S\cap T|-1)/2$ from source $T$.
+Adding the requested side coefficient gives one for $S=T$ and zero for every
+other pair. This is an identity over the Gaussian-dyadic scalar ring;
+binary indicators specify address frames, not the scalar arithmetic.
+
+\paragraph{The alternating residual and its repair.}
+For a requested sum with source span $U\subset t_S^\perp$, the injection
+residual is $E=t_S^\perp\cap U^\perp$. In a binary symmetric space the
+canonical vector represents the functional $x\mapsto x\cdot x$.
+In the ambient space it is $\mathbf1$. Since the $u_k$ are orthonormal
+and orthogonal to $t_S$, the canonical vector of $E$ is
+\[
+ \mathbf1+t_S+\sum_{k\in K}u_k.
+\]
+Thus a nonzero $E$ is alternating precisely when this vector is zero.
+Split every offending requested sum into one singleton and the remaining
+sum, keeping their common coefficient. The latter canonical vector changes
+by the removed nonzero $u_k$. The singleton's vector also cannot vanish,
+because the original sum consists of more than one independent indicator.
+Both repaired residuals are consequently nonalternating. Exact enumeration
+finds 50 such repairs, taking 323940 requests to 323990 partial outputs.
+For example, pair $\{0,1\}$ and target $\{0,1,2\}$ with its 22 outside
+third points has a two-dimensional alternating residual before repair.
+
+\paragraph{An explicit shared-sum graph.}
+Within each group order its third points increasingly. To build a requested
+subset sum, bisect the entire ordered interval at its floor midpoint,
+recursively build its nonempty intersections with the halves, and add the
+two results when both are nonempty. Intern sums by their exact source subset.
+Leaves are source inputs. Construct only nodes feeding requested outputs.
+Every addition has disjoint supports, and every node stays in its fixed-pair
+group. This deterministic finite graph has 160046 binary additions and
+323990 designated output uses. The checker verifies all $v^2=5290000$
+scalar coefficients, including required zeros, from the actual graph.
+
+Compile the graph reversibly by making a physical role for each outgoing
+use at an input. At an addition reuse its first incoming role for one
+outgoing use, retire the second incoming role after adding it, and allocate
+fresh roles for all remaining uses. Copy the pivot into the other outgoing
+roles. These are invertible additions, with inverse fanout undone first.
+There are $2A+O$ outgoing uses and one pivot identification per addition,
+so $R=A+O=484036$ roles suffice. Simultaneous inputs are distinct.
+
+Let $\mathcal L$ be the mixer, $\mathcal V$ the source copy,
+$\mathcal J$ the signed partial-output injection, and $\mathcal G,\mathcal R$
+the retained center gather and scatter. With plus/minus signs denoting
+the associated updates, use the chronological schedule
+\[
+ \mathcal L,-\mathcal J,\mathcal L^{-1},-\mathcal R,
+ \mathcal V,\mathcal G,\mathcal R,\mathcal L,\mathcal J,
+ \mathcal L^{-1},-\mathcal G,-\mathcal V.
+\]
+For initial scratch $z$, the side injections cancel
+$-\mathcal J\mathcal Lz+\mathcal J\mathcal L(z+\mathcal Vx)$.
+Centers cancel in the same way. Cleanup restores $z$ and the centers,
+leaving $(\mathcal J\mathcal L\mathcal V+\mathcal R\mathcal G)x=x$
+added to the target. Reversing and inverting the schedule subtracts $x$.
+The three tensor stages therefore give the original signed bank exchange
+$(-Y,X)$ with every auxiliary restored for arbitrary initial values.
+
+\paragraph{Complete forward and reverse frames.}
+Use the original stage decomposition $A=B\perp P$, suppressing its future
+norm-one line factor $Q$, and write
+\[
+ D_0=B\otimes F,\quad D_1=A\otimes F,\quad
+ D_U=(B\otimes F)\perp(P\otimes U).
+\]
+In a forward invocation all early mixers, early side injection and the early
+center operation use $D_0$. A source copy uses $D_{\langle t_X\rangle}$;
+the middle mixer uses $D_U$ for its node's source span; target injection
+uses $D_{t_Y^\perp}$. All cleanup mixers and the final source copy use $D_1$.
+Giving the early injection $D_0$, rather than its smaller incoming data-line
+label, is essential to avoid extra side decreases. The physical target data
+can grow to $D_0$ at that gate within its prescribed stage boundary.
+
+In the reversed invocation the early copy and mixer use $D_0$. The physical
+$X$ injection uses $D_{\langle t_X\rangle}$; the middle inverse mixer uses
+$D_{U^\perp}$; the physical $Y$ copy uses $D_{t_Y^\perp}$; cleanup uses $D_1$.
+The reversed graph has $U_w^\perp\subset U_z^\perp$ whenever the forward
+graph has $U_z\subset U_w$. Output orthogonality places each physical target
+line inside its output complement. Source endpoints have the exact source
+line complement. Every gate has one common frame on all its incidences.
+
+The added nonzero residuals have norm-one vectors. Nested source subsets have
+orthonormal difference bases; reversed complements have the same residuals.
+Fresh and retired roles require source spans or their complements. No active
+node contains all 23 indicators of a full star: a disjoint query omits the
+target's outside points, an intersection-two query has at most 22 sources,
+and a one-point pair intersection selects at most two. Nodes are subsets
+of queries. Their span's canonical vector therefore differs from $\mathbf1$,
+so its nonzero complement is nonalternating. The only other new residuals
+are the repaired output residuals above. Tensoring with $P,Q$ preserves a
+norm-one witness. All common-component, data, center and final scratch
+residuals are the original ones: coordinate units outside the earlier/future
+triple tensor supports supply their norm-one witnesses. Hence every nonzero
+residual has an orthonormal basis by the original binary-space argument.
+The exact scratch audit traces 7738184 incidences across both orientations.
+
+The data stage boundaries are unchanged. The only decreases are the $h+1$
+center returns per invocation, each losing $h$ dimensions. Separate auxiliary
+banks are used at all three stages; no matching or cross-stage reuse is assumed.
+There are $3v^2$ invocations, so
+\[
+ L=3v^2h(h+1)=10315500000,\quad
+ W=2N+3v^2(R+h+1)=7706397940000.
+\]
+The signed dimension sum telescopes to $Wm-2N$. Adding twice the total
+decrease gives
+\[
+ s=Wm-2N+2L=120412464109500000,
+ \qquad \eta=\frac{Wm-s}{Wm}=\frac{14}{455245625}.
+\]
+
+\begin{proposition}\label{prop:orthogonal-star-interface}
+The replacement network satisfies the retained complex phase interface,
+with these $m,W,s$, the original all-role endpoint corrections, signed bank
+exchange and arbitrary-scratch restoration. It supports
+$\sigma=1-318/10^{11}$, while the paired bit primitive retains
+$\tau=1-296/10^{11}$.
+\end{proposition}
+\begin{proof}
+The scalar and frame arguments establish the common-frame contract.
+Each orthonormal residual basis gives one signed translation kernel per
+basis vector by orthogonal weight additivity modulo four. Thus exactly $s$
+children are charged. The original weight-27 source/sink and signed-bank
+corrections still apply, since all data and scratch endpoints are unchanged.
+A positive exponential Taylor sum proves $\log m<966/100$; exact rationals
+give $\eta>(318/10^{11})(966/100)$. Therefore
+$s/W<m^{1-318/10^{11}}$. The certificate checks $2\le s<m^5$ and bounds
+the new finite scalar updates within $E=64(W+m+1)^3$. Inverse/endpoint phases
+retain their fixed node accounting. The generalized stopping-depth guard
+and compact-control layer consequently apply with the replacement constants.
+No direct-swap bit argument or new Gaussian-resampling algorithm is used.
+\end{proof}
